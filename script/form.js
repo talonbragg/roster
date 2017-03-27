@@ -37,7 +37,7 @@ function formSubmit(e) {
 	if (playerName.length < 1) {
 		err.innerHTML = "Please enter a player name!";
 	}
-	if (playerNum.length < 1) {
+	else if (playerNum.length < 1) {
 		err.innerHTML = "Please enter a player number!"
 	}
 
