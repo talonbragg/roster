@@ -13,6 +13,7 @@ function formSubmit(e) {
 	console.log('submit event', e);
 	console.log(nam.length);
 	console.log(playerText);
+	console.log(mainDebug);
 
 	// Event Handling
 	e.stopPropagation();
@@ -26,11 +27,20 @@ function formSubmit(e) {
 	var player = document.createElement("LI");
 	var playerText = document.createTextNode(nam.value + ' ' + '#' + num.value);
 
+	// Array addition
+	var mainDebug = playerArr.push(thisPlayer);
+
 	player.appendChild(playerText);
 	roster.appendChild(player);
 
-	if (player.value === '') {
+	if (playerName.length < 1) {
 		err.innerHTML = "Please enter a player name!";
 	}
+
+	// Debugging
+	console.log(nam.length);
+	console.log(playerText);
+	console.log(mainDebug);
+	console.log(playerArr);
 };
 form.addEventListener('submit', formSubmit);
