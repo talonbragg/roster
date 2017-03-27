@@ -3,6 +3,7 @@ var roster = document.getElementById('roster');
 var nam = document.getElementById('name');
 var num = document.getElementById('num');
 var err = document.getElementById('err');
+var err2 = document.getElementById('err2');
 var nameVal = nam.value;
 var numVal = num.value;
 
@@ -27,7 +28,7 @@ function formSubmit(e) {
 	var player = document.createElement("LI");
 	var playerText = document.createTextNode(nam.value + ' ' + '#' + num.value);
 
-	// Array addition
+	// Array additio
 	var mainDebug = playerArr.push(thisPlayer);
 
 	player.appendChild(playerText);
@@ -35,6 +36,9 @@ function formSubmit(e) {
 
 	if (playerName.length < 1) {
 		err.innerHTML = "Please enter a player name!";
+	}
+	if (playerNum.length < 1) {
+		err.innerHTML = "Please enter a player number!"
 	}
 
 	// Debugging
