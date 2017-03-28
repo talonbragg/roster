@@ -10,7 +10,6 @@ var numVal = num.value;
 var playerArr = [];
 
 function formSubmit(e) {
-    if (playerName.length > 0 && playerNum.length > 0) {
         // Debugging
         console.log('submit event', e);
         console.log(nam.length);
@@ -42,11 +41,13 @@ function formSubmit(e) {
         console.log(nam.length);
         console.log(playerText);
         console.log(mainDebug);
-        console.log(playerArr);
-    } else if (playerName.length < 1) {
+        console.log(playerArr); 
+    if (playerName.length < 1) {
         err.innerHTML = "Please enter a player name!";
+        return false;
     } else if (playerNum.length < 1) {
-        err.innerHTML = "Please enter a player number!"
+        err.innerHTML = "Please enter a player number!";
+        return false;
     }
 
 
