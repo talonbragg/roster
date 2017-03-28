@@ -47,7 +47,7 @@ function formSubmit(e) {
         return false;
     } else if (playerNum.length < 1) {
         err.innerHTML = "Please enter a player number!";
-        return false;
+        return true;
     }
 
 
