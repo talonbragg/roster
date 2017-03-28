@@ -44,7 +44,7 @@ function formSubmit(e) {
         console.log(playerArr); 
     if (playerName.length < 1) {
         err.innerHTML = "Please enter a player name!";
-        return false;
+        return true;
     } else if (playerNum.length < 1) {
         err.innerHTML = "Please enter a player number!";
         return true;
