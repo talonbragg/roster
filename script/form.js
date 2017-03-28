@@ -45,11 +45,13 @@ function formSubmit(e) {
     if (playerName.length < 1) {
         err.innerHTML = "Please enter a player name!";
         return true;
-    } else if (playerNum.length < 1) {
+    }; else if (playerNum.length < 1) {
         err.innerHTML = "Please enter a player number!";
         return true;
-    }
-
+    };
+    else if (roster.childElementCount === 12) {
+        err.innerHTML = "You now have 12 players in your roster. You may not have any more players on the team.";
+    };
 
 };
 form.addEventListener('submit', formSubmit);
