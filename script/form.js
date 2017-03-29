@@ -12,8 +12,6 @@ var playerNum = num.value;
 var playerArr = [];
 
 function formSubmit(e) {
-    e.stopPropagation();
-    e.preventDefault();
     if(playerName.length > 0 && playerNum.length >= 0) {
         // Debugging
         console.log('submit event', e);
@@ -53,6 +51,7 @@ function formSubmit(e) {
     else if (roster.childElementCount === 12) {
         err.innerHTML = "You now have 12 players in your roster. You may not have any more players on the team.";
     }
-
+    e.stopPropagation();
+    e.preventDefault();
 };
 form.addEventListener('submit', formSubmit);
