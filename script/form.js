@@ -20,6 +20,8 @@ function formSubmit(e) {
         console.log(mainDebug);
 
         // Event Handling
+        e.stopPropagation();
+        e.preventDefault();
 
         // Object
         var thisPlayer = {
@@ -43,15 +45,15 @@ function formSubmit(e) {
         console.log(playerArr);
     } else if (playerName.length < 1) {
         err.innerHTML = "Please enter a player name!";
-        return true;
+        e.stopPropagation();
+        e.preventDefault();
     } else if (playerNum.length < 1) {
-        err.innerHTML = "Please enter a player number!";
-        return true;
+        err.innerHTML = "Please enter a player number";
+        e.stopPropagation();
+        e.preventDefault();
     }
     else if (roster.childElementCount === 12) {
         err.innerHTML = "You now have 12 players in your roster. You may not have any more players on the team.";
     }
-    e.stopPropagation();
-    e.preventDefault();
 };
 form.addEventListener('submit', formSubmit);
