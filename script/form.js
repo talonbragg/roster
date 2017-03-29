@@ -6,10 +6,13 @@ var err = document.getElementById('err');
 var err2 = document.getElementById('err2');
 var nameVal = nam.value;
 var numVal = num.value;
+var playerName = nam.value;
+var playerNum = num.value;
 
 var playerArr = [];
 
 function formSubmit(e) {
+    if(playerName.length > 0 && playerNum.length > 0) {
         // Debugging
         console.log('submit event', e);
         console.log(nam.length);
@@ -21,8 +24,6 @@ function formSubmit(e) {
         e.preventDefault();
 
         // Object
-        var playerName = nam.value;
-        var playerNum = num.value;
         var thisPlayer = {
             name: playerName,
             num: playerNum
@@ -41,7 +42,8 @@ function formSubmit(e) {
         console.log(nam.length);
         console.log(playerText);
         console.log(mainDebug);
-        console.log(playerArr); 
+        console.log(playerArr);
+    } 
     if (playerName.length < 1) {
         err.innerHTML = "Please enter a player name!";
         return true;
