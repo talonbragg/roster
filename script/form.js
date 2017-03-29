@@ -12,6 +12,8 @@ var playerNum = num.value;
 var playerArr = [];
 
 function formSubmit(e) {
+    e.stopPropagation();
+    e.preventDefault();
     if(playerName.length > 0 && playerNum.length > 0) {
         // Debugging
         console.log('submit event', e);
@@ -20,8 +22,6 @@ function formSubmit(e) {
         console.log(mainDebug);
 
         // Event Handling
-        e.stopPropagation();
-        e.preventDefault();
 
         // Object
         var thisPlayer = {
@@ -43,8 +43,7 @@ function formSubmit(e) {
         console.log(playerText);
         console.log(mainDebug);
         console.log(playerArr);
-    } 
-    if (playerName.length < 1) {
+    } else if (playerName.length < 1) {
         err.innerHTML = "Please enter a player name!";
         return true;
     } else if (playerNum.length < 1) {
