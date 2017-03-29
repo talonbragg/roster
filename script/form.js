@@ -14,7 +14,7 @@ var playerArr = [];
 function formSubmit(e) {
     e.stopPropagation();
     e.preventDefault();
-    if(playerName.length > 0 && playerNum.length > 0) {
+    if(playerName.length > 0 && playerNum.length >= 0) {
         // Debugging
         console.log('submit event', e);
         console.log(nam.length);
